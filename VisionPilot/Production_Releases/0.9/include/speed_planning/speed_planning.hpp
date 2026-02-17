@@ -1,1 +1,5 @@
-// Placeholder file for speed planning include
+/**
+ * @file speed_planning.hpp
+ * @brief Planning speed for ACC and AEB features
+ * 
+ */
