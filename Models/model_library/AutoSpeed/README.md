@@ -23,9 +23,9 @@ network detection success rate for different weather conditions
 
 <table style="border:none; border-collapse:collapse;">
   <tr>
-    <td><img src="../Media/daytime_fair_weather_1.jpg" width="300" alt="alt"></td>
-    <td><img src="../Media/daytime_fair_weather_2.jpg" width="300" alt="alt"></td>
-    <td><img src="../Media/daytime_fair_weather_3.jpg" width="300" alt="alt"></td>
+    <td><img src="../../../Media/daytime_fair_weather_1.jpg" width="300" alt="alt"></td>
+    <td><img src="../../../Media/daytime_fair_weather_2.jpg" width="300" alt="alt"></td>
+    <td><img src="../../../Media/daytime_fair_weather_3.jpg" width="300" alt="alt"></td>
   </tr>
 </table>
 
