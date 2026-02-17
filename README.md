@@ -1,5 +1,12 @@
 # Autoware - Open Source Autonomous Highway Pilot
 
+<p align="center">
+    <picture>
+        <source media="(prefers-color-scheme: dark)">
+        <img src="./Media/VisionPilot_logo.png" alt="VisionPilot" width="100%">
+    </picture>
+</p>
+
 <div align="center">
 
 [![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
