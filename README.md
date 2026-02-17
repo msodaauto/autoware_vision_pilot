@@ -47,13 +47,13 @@ Rather than going for a single moonshot, we are sequentially building the core s
 As part of our technology roadmap, we will sequentially develop three versions of the Autoware Autonomous Highway Pilot System, called:
 - ***[Vision Pilot - Level 2+ highway autopilot through component-based End-to-End AI](/VisionPilot/)***
 - ***Vision Pilot PRO - Level 2+ highway and urban autopilot through monolithic End-to-End AI***
-- ***Vision Drive - Level 4+ all road autonomy using hybrid End-to-End AI***
+- ***Vision Pilot Drive - Level 4+ all road autonomy using hybrid End-to-End AI***
 
 <img src="/Media/VisionPilot.png" width="100%">
 
 <img src="/Media/VisionPilot_PRO.png" width="100%">
 
-<img src="/Media/VisionDrive.png" width="100%">
+<img src="/Media/VisionPilot_Drive.png" width="100%">
 
 ## Models
 The Models folder contains all code related to AI model development
