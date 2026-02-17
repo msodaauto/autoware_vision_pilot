@@ -62,7 +62,7 @@ class CameraPublisherNode(Node):
                 "spawn_point": {
                     "x": 2.0,   # 1.5 m in front of vehicle center
                     "y": 0.0,   # centered
-                    "z": 1.2,   # above ground
+                    "z": 1.3,   # above ground
                     "roll": 0.0,
                     "pitch": 0.0,
                     "yaw": 0.0
@@ -70,7 +70,7 @@ class CameraPublisherNode(Node):
                 "attributes": {
                     "image_size_x": "1280",
                     "image_size_y": "720",
-                    "fov": "120",
+                    "fov": "50",
                     "sensor_tick": "0.05"
                 }
             }
@@ -81,9 +81,10 @@ class CameraPublisherNode(Node):
         # -------------------
         self.pipeline = Gst.parse_launch(
             "appsrc name=src is-live=true format=time "
-            "caps=video/x-raw,format=BGR,width=1280,height=720,framerate=20/1 "
+            "caps=video/x-raw,format=BGR,width=1280,height=720,framerate=10/1 "
             "! videoconvert "
             "! videocrop top=80 "
+            "! video/x-raw,width=1280,height=640,framerate=10/1 "
             "! x264enc tune=zerolatency speed-preset=superfast bitrate=500 "
             "! rtph264pay config-interval=1 pt=96 "
             "! udpsink host=127.0.0.1 port=5000 sync=false async=false"

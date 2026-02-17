@@ -20,7 +20,8 @@ private:
 
   rclcpp::TimerBase::SharedPtr timer_;
   rclcpp::Publisher<std_msgs::msg::Float32>::SharedPtr speed_pub_;
-  rclcpp::Publisher<std_msgs::msg::Float32>::SharedPtr brake_pub_;
+  rclcpp::Publisher<std_msgs::msg::Float32>::SharedPtr steering_pub_;
+  // rclcpp::Publisher<std_msgs::msg::Float32>::SharedPtr brake_pub_;
 
 
   double TARGET_VEL;

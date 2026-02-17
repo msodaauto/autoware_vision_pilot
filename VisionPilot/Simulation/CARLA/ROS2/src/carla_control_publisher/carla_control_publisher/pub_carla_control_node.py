@@ -1,3 +1,4 @@
+import math
 import carla
 import rclpy
 from rclpy.node import Node
@@ -29,7 +30,8 @@ class CarlaControlPublisher(Node):
 
         # self.control_pub_ = self.create_publisher(CarlaEgoVehicleControl, '/carla/hero/vehicle_control_cmd', 1)
         self.control_pub_ = self.create_publisher(AckermannDriveStamped, self.vehicle_control_cmd_topic, 1)
-        self.timer = self.create_timer(0.02, self.timer_callback)
+        # self.timer = self.create_timer(0.02, self.timer_callback)
+        self.timer = self.create_timer(0.1, self.timer_callback)
         self.steering_angle = 0.0
         self.speed = 0.0
         self.brake_cmd = 0.0
@@ -51,10 +53,14 @@ class CarlaControlPublisher(Node):
         msg.header.frame_id = "base_link"
 
         # steering angle in radians (NOT normalized)
-        msg.drive.steering_angle = self.steering_angle  # rad
+        # msg.drive.steering_angle = math.radians(self.steering_angle)  # rad
+        carla_tyre_angle = self.steering_angle * (-1 / 10.3)
+        msg.drive.steering_angle = math.radians(carla_tyre_angle)  # rad
+        self.get_logger().info(f'Steering deg: {self.steering_angle}')
+        self.get_logger().info(f'Steering rad: { msg.drive.steering_angle}')
 
         # desired speed (m/s)
-        msg.drive.speed = self.speed
+        msg.drive.speed = self.speed / 3.6
 
         # optional
         msg.drive.acceleration = 0.0
@@ -71,7 +77,7 @@ class CarlaControlPublisher(Node):
         self.speed = msg.data
         
     def brake_callback(self, msg):
-        self.get_logger().info(f'Brake command received: {msg.data}')
+        # self.get_logger().info(f'Brake command received: {msg.data}')
         self.brake_cmd = msg.data
 
 def main(args=None):
