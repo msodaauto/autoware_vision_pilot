@@ -61,8 +61,8 @@ To run with ROS2 native interface, add `--ros2` at the end
 ![]()
 
 
-
-## SodaSim ↔ Autoware Integration Notes
+# SODA.Sim Simulator
+## SodaSim & Autoware Integration Notes
 
 Soda.Sim is an Unreal Engine–based simulator that can publish vehicle and sensor data over ROS 2.
 
